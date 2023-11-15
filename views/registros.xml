@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hospital_registro_form_view" model="ir.ui.view">
+            <field name="name">hospital.registros.form</field>
+            <field name="model">hospital.registros</field>
+            <field name="arch" type="xml">
+                <form string="Registros">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="partner_id"/>
+                                <field name="peso"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="date_in"/>
+                                <field name="time_out"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="motive"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hospital_registro_tree_view" model="ir.ui.view">
+            <field name="name">hospital.registros.tree</field>
+            <field name="model">hospital.registros</field>
+            <field name="arch" type="xml">
+                <tree string="Registros">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date_in"/>
+                    <field name="time_out"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
+
+
+
