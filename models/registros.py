@@ -12,3 +12,19 @@ class HospitalRegistros(models.Model):
     
     peso = fields.Float("Peso corporal en KG")
     time_out = fields.Float("Hora de salida")
+
+    gravedad = fields.Selection([
+        ('1','Baja'),
+        ('2','Media'),
+        ('3','Alta'),
+    ],"Gravedad")
+
+    state = fields.Selection([
+        ('1','Sin Atender'),
+        ('2','En revision (Consulta)'),
+        ('3','Atendido'),
+        
+    ],"Estatus")
+
+    # Forma de relacionar los id's entre modelos
+    account_ids = fields.One2many('account.move', 'hospital_id', 'Facturas')

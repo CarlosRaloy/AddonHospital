@@ -1,16 +1,17 @@
 {
-    'name': 'The Hospital',
+    'name': 'The Hospital Odoo',
     'version': '1.0',
     'description': 'Module At hospital',
     'category': 'Other',
     'author': 'Carlos Garcia Garcia',
-    'website': 'algo.com',
+    'website': 'python.org',
     'license': 'OPL-1',
-    'depends': ['base'],
+    'depends': ['base', 'account'],
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
-        'views/registros.xml'
+        'views/consultorio.xml'
+        'views/registros.xml',
         ],
     'installable': True,
     'auto_install': False,

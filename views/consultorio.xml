@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hospital_consultorio_form_view" model="ir.ui.view">
+            <field name="name">hospital_consultorio.form</field>
+            <field name="model">hospital.consultorio</field>
+            <field name="arch" type="xml">
+                <form string="ModelTitle">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="example_title"/>
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="doctor"/>
+                                <field name="especialidad"/>
+                            </group>
+                            <group>
+                                <field name="ubicacion"/>
+                                <field name="horario"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hospital_consultorio_tree_view" model="ir.ui.view">
+            <field name="name">hospital_consultorio.tree</field>
+            <field name="model">hospital.consultorio</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="name"/>
+                    <field name="doctor"/>
+                    <field name="especialidad"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>
