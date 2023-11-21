@@ -25,14 +25,14 @@
             </field>
         </record>
 
-        <record id="hospital_consultorio_action_window" model="ir.actions.act_window">
-            <field name="name">Consultorio</field>
+        <record id="action_hospital_consultorio_menu" model="ir.actions.act_window">
+            <field name="name">Consultorios</field>
             <field name="res_model">hospital.consultorio</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Consultorios del hospital.
+                <p class="o_view_overview_empty_folder">
+                    Lista de Consultorios disponibles
                 </p>
             </field>
             <field name="view_id" ref="hospital_consultorio_tree_view"/>
@@ -40,15 +40,38 @@
 
         <!-- === .::: Seccion de menus :::. === -->
 
-        <menuitem id="menu_hospital" name="Hospital" sequence="10" groups="base.group_user,base.group_partner_manager" web_icon="hospital,static/description/icon.png"/>
+        <menuitem id="menu_hospital"
+                  name="Hospital"
+                  sequence="10"
+                  groups="base.group_user,base.group_partner_manager"
+                  web_icon="hospital,static/description/icon.png"/>
 
-        <menuitem id="menu_action_reg" parent="menu_hospital" name="Registros" sequence="1" action="action_hospital_registros_menu" groups="base.group_user"/>
+        <menuitem id="menu_action_reg"
+                  name="Registros"
+                  sequence="1"
+                  parent="menu_hospital"
+                  action="action_hospital_registros_menu"
+                  groups="base.group_user"/>
 
-        <menuitem id="pacientes_hospital_menu" parent="menu_hospital" name="Pacientes" sequence="2" action="res_partner_action_pacientes" groups="base.group_user"/>
+        <menuitem id="pacientes_hospital_menu"
+                  name="Pacientes"
+                  sequence="2"
+                  parent="menu_hospital"
+                  action="res_partner_action_pacientes"
+                  groups="base.group_user"/>
 
-        <menuitem name="Ajustes" sequence="10" id="hospital_ajustes_menu" parent="menu_hospital" groups="base.group_user, base.group_partner_manager, base.group_system"/>
+        <menuitem id="hospital_consultorio_menu"
+                  name="Consultorios"
+                  sequence="3"
+                  parent="menu_hospital"
+                  action="action_hospital_consultorio_menu"
+                  groups="base.group_user"/>
 
-        <menuitem name="Consultorios" sequence="3" id="hospital_consultorio_menu" groups="base.group_user" parent="menu_hospital" action="hospital_consultorio_action_window"/>
+        <menuitem id="hospital_ajustes_menu"
+                  name="Ajustes"
+                  sequence="11"
+                  parent="menu_hospital"
+                  groups="base.group_user,base.group_partner_manager"/>
 
 
     </data>

@@ -8,10 +8,10 @@
     'license': 'OPL-1',
     'depends': ['base', 'account'],
     'data': [
-        'security/ir.model.access.csv',
-        'views/menu.xml',
-        'views/consultorio.xml'
+        'security/ir.model.access.csv', # First is the security
         'views/registros.xml',
+        'views/consultorio.xml',
+        'views/menu.xml', # The rule is the last menu
         ],
     'installable': True,
     'auto_install': False,

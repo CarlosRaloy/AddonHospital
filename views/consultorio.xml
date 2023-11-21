@@ -2,16 +2,17 @@
 <odoo>
     <data>
 
+        <!-- Form View for hospital.consultorio -->
         <record id="hospital_consultorio_form_view" model="ir.ui.view">
             <field name="name">hospital_consultorio.form</field>
             <field name="model">hospital.consultorio</field>
             <field name="arch" type="xml">
-                <form string="ModelTitle">
+                <form string="Consultorio">
                     <sheet>
                         <div class="oe_title">
-                            <label for="example_title"/>
+                            <label for="name"/>
                             <h1>
-                                <field name="name" placeholder="Title"/>
+                                <field name="name"/>
                             </h1>
                         </div>
                         <group>
@@ -29,11 +30,12 @@
             </field>
         </record>
 
+        <!-- Tree View for hospital.consultorio -->
         <record id="hospital_consultorio_tree_view" model="ir.ui.view">
             <field name="name">hospital_consultorio.tree</field>
             <field name="model">hospital.consultorio</field>
             <field name="arch" type="xml">
-                <tree string="ModelTitle">
+                <tree string="Consultorio">
                     <field name="name"/>
                     <field name="doctor"/>
                     <field name="especialidad"/>
