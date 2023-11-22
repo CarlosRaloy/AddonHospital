@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="hospital_sequence" model="ir.sequence">
+            <field name="name">hospital_registros</field>
+            <field name="code">hospital.registros</field>
+            <field name="prefix">HPL</field>
+            <field name="padding">4</field>
+        </record>
+        <!-- Example => HPL001 -->
+
+    </data>
+</odoo>

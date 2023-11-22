@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form by doctors -->
+        <record id="hospital_doctores_form_view" model="ir.ui">
+            <field name="name">hospital_doctores.form</field>
+            <field name="model">hospital.doctores</field>
+            <field name="arch" type="xml">
+                <form string="Doctores">
+                    <sheet>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

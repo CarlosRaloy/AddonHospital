@@ -19,6 +19,7 @@
                                 <field name="partner_id"/>
                                 <field name="peso"/>
                                 <field name="gravedad"/>
+                                <field name="state"/>
                             </group>
                             <group>
                                 <field name="date"/>
@@ -29,6 +30,7 @@
                         </group>
                         <group>
                             <field name="motive"/>
+                            <field name="account_ids"/>
                             <!--<field name="motive" widget="CopyClipboardChar"/>-->
                         </group>
                     </sheet>
@@ -47,6 +49,7 @@
                     <field name="partner_id"/>
                     <field name="date_in"/>
                     <field name="time_out"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
             </field>
         </record>
