@@ -7,7 +7,19 @@
             <field name="model">hospital.registros</field>
             <field name="arch" type="xml">
                 <form string="Registros">
+                    <header>
+                        <button name="ejemplo_botton" type="object" class="btn btn-outline-info" string="Info"/>
+                        <button name="ejemplo_botton" type="object" class="btn btn-outline-primary" string="Primary"/>
+                        <button name="ejemplo_botton" type="object" class="btn btn-outline-success" string="success" attr="{'invisible':[('state','!=','1')]}"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
                     <sheet>
+                       <div class="oe_button_box" name="button_box">
+                            <button name="ejemplo_botton" type="object" class="oe_stat_button" icon="fa-cogs">
+                                <span>BOTON</span>
+                            </button>
+                        </div>
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
                             <h1>
@@ -51,6 +63,58 @@
                     <field name="time_out"/>
                     <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
+            </field>
+        </record>
+
+
+        <record id="hospital_registro_kanban_view" model="ir.ui.view">
+            <field name="name">hospital.registros.kanban</field>
+            <field name="model">hospital.registros</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey oe_kanban_dashboard oe_stock_kanban o_emphasize_colors" create="0">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value): ''}" name="hospital_kanban_registro">
+                                <div t-attf-class="o_kanban_card-header">
+                                    <div class="o_kanban_card_header_tittle">
+                                        <div class="o_dark">
+                                            <a type="object">
+                                                <field name="name"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content">
+                                    <div class="row">
+                                        <div class="col-6 o_kanban_primary_left">
+                                            <button name="ejemplo_botton" type="object" class="btn btn-primary" string="Primary"/>
+                                        </div>
+                                        <div class="col-6 o_kanban_primary_right">
+                                            <field name="date"/>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 o_kanban_primary">
+                                                <field name="partner_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container 0_kanban_card_manage_pane dropdown-menu" role="menu">
+                                    <div t-if="widget.editable" class="o_kanban_card_manege_settings row">
+                                        <div class="col-8" role="menuitem" aria-haspopup="true">
+                                            <ul class="oe_kanban_colorpicker" data-field="color" role="menu"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
 

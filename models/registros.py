@@ -11,6 +11,7 @@ class HospitalRegistros(models.Model):
     date = fields.Datetime("Fecha de registro")
     date_in = fields.Datetime("Fecha de Ingreso")
     motive = fields.Text("Motivo de visita")
+    color = fields.Integer('Color')
 
     peso = fields.Float("Peso corporal en KG")
     time_out = fields.Float("Hora de salida")
@@ -53,3 +54,6 @@ class HospitalRegistros(models.Model):
     @api.onchange('peso','time_out')
     def prueba_onchange(self):
         return False
+
+    def ejemplo_botton(self):
+        raise UserError(_('Hola Mundo'))
