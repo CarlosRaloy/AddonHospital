@@ -12,7 +12,7 @@
         'data/secuencias.xml',  # Next to security or end of file
         'views/registros.xml',
         'views/consultorio.xml',
-        #'views/doctores.xml',
+        'views/doctores.xml',
         'views/menu.xml',  # The rule is the last menu
     ],
     'installable': True,
