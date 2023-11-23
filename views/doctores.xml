@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form by doctors -->
+        <record id="hospital_doctores_form_view" model="ir.ui.view">
+            <field name="name">hospital_doctores.form</field>
+            <field name="model">hospital.doctores</field>
+            <field name="arch" type="xml">
+                <form string="Doctores">
+                    <sheet>
+                        <div class="oe_tittle">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="edad"/>
+                                <field name="cedula"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for hospital doctores -->
+        <record id="hospital_doctores_tree_view" model="ir.ui.view">
+            <field name="name">hospital_doctores.tree</field>
+            <field name="model">hospital.doctores</field>
+            <field name="arch" type="xml">
+                <tree string="Doctores">
+                    <field name="name"/>
+                    <field name="edad"/>
+                    <field name="cedula"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

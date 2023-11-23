@@ -4,7 +4,7 @@
         <record id="action_hospital_registros_menu" model="ir.actions.act_window">
             <field name="name">Hospital</field>
             <field name="res_model">hospital.registros</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
                 <p class="o_view_overview_empty_folder">
@@ -38,6 +38,17 @@
             <field name="view_id" ref="hospital_consultorio_tree_view"/>
         </record>
 
+        <record id="action_hospital_doctores_menu" model="ir.actions.act_window">
+            <field name="name">Doctores</field>
+            <field name="res_model">hospital.doctores</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crear nuevos doctores
+                </p>
+            </field>
+        </record>
+
         <!-- === .::: Seccion de menus :::. === -->
 
         <menuitem id="menu_hospital"
@@ -66,6 +77,14 @@
                   parent="menu_hospital"
                   action="action_hospital_consultorio_menu"
                   groups="base.group_user"/>
+
+        <menuitem id="hospital_doctores_menu"
+                  name="Doctores"
+                  sequence="4"
+                  parent="menu_hospital"
+                  action="action_hospital_doctores_menu"
+                  groups="base.group_user"/>
+
 
         <menuitem id="hospital_ajustes_menu"
                   name="Ajustes"
