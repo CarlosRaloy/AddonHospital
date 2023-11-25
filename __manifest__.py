@@ -11,6 +11,7 @@
         'security/ir.model.access.csv',  # First is the security
         'data/secuencias.xml',  # Next to security or end of file
         'views/registros.xml',
+        'reports/hospital_registro.xml', #Report before of the view model same
         'views/consultorio.xml',
         'views/doctores.xml',
         'views/especialidades.xml',

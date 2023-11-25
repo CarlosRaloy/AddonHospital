@@ -37,6 +37,38 @@ class HospitalRegistros(models.Model):
     # company_id = fields.Many2one('res.company', 'Compania', readonly=True,
     #                             default = lambda self: self.env['res.company']._
 
+    def _get_to_date(self):
+        date = self.date
+        return date.strftime('%d') + " de " + self.get_mes(date.strftime('%m')) + " de " + date.strftime('%Y')
+
+
+    def get_mes(self, n=1):
+        if n == 1:
+            return 'Enero'
+        elif n == 2:
+            return 'Febrero'
+        elif n == 3:
+            return 'Marzo'
+        elif n == 4:
+            return 'Abril'
+        elif n == 5:
+            return 'Mayo'
+        elif n == 6:
+            return 'Junio'
+        elif n == 7:
+            return 'Julio'
+        elif n == 8:
+            return 'Agosto'
+        elif n == 9:
+            return 'Septiembre'
+        elif n == 10:
+            return 'Octubre'
+        elif n == 11:
+            return 'Noviembre'
+        elif n == 12:
+            return 'Diciembre'
+
+
     @api.model
     def create(self, vals):
         # raise UserError(_(vals))
@@ -44,6 +76,15 @@ class HospitalRegistros(models.Model):
             vals['name'] = self.env['ir.sequence'].next_by_code('hospital.registros')
         result = super(HospitalRegistros, self).create(vals)
         return result
+
+
+    def imprimir_reporte(self):
+        for res in self:
+            data={
+                "docs": res,
+                "saludo":"Hola Mundo"
+            }
+            return self.env.ref('hospital.report_hospital_registros').report_action(self, data=data)
 
     # Apply in operations fields, your action is on save changes
     @api.depends('peso','time_out')

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!--<template id="external_layout_hospital">
+            <t t-foreach="docs" t-as="doc">
+            </t>
+            <div class="header o_boxed_header">
+
+            </div>
+            <div class="article">
+                <t t-raw="0"/>
+            </div>
+            <div class="footer">
+
+            </div>
+        </template>-->
+
+        <record id="paperformat_hospital_registros" model="report.paperformat">
+            <field name="name">Hospital Letter</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="report_hospital_registros"
+                model="hospital.registros"
+                string="Reporte de registros"
+                name="hospital.report_hospital_registros_view"
+                file="hospital.report_hospital_registros_view"
+                report_type="qweb-html"
+                print_report_name="'Registro - %s' % (object.name)"/>
+
+        <template id="report_hospital_registros_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="row">
+                            <div class="page">
+                                <div class="col-sm-12" name="title">
+                                    <h2>Reporte Consulta <t t-esc="doc.name"/></h2>
+                                    <h4>Fecha: <span t-field="doc.date"/></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" name="Consulta">
+                            <div class="col-sm-6">
+                                <p>Paciente: <span t-field="doc.partner_id.name"/> </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>RFC: <span t-field="doc.partner_id.vat"/> </p>
+                            </div>
+                        </div><br/><hr/>
+
+                        <table class="table table-striped table-hover" name="table_date">
+                            <thead>
+                                <tr>
+                                    <th>PESO</th>
+                                    <th>GRAVEDAD</th>
+                                    <th>MOTIVO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span t-field="doc.peso"/></td>
+                                    <td><span t-field="doc.gravedad"/></td>
+                                    <td><span t-field="doc.motive"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
