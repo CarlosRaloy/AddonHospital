@@ -14,6 +14,7 @@
         'views/consultorio.xml',
         'views/doctores.xml',
         'views/especialidades.xml',
+        'views/ubicaciones.xml',
         'views/menu.xml',  # The rule is the last menu
     ],
     'installable': True,

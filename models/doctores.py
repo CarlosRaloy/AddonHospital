@@ -1,7 +1,7 @@
 from odoo import fields, models, api
 
 
-class ModelName(models.Model):
+class HospitalDoctores(models.Model):
     _name = 'hospital.doctores'
     _description = 'son los doctores del hospital'
 

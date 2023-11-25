@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="hospital_ubicaciones_form_view" model="ir.ui.view">
+            <field name="name">hospital.ubicaciones.form</field>
+            <field name="model">hospital.ubicaciones</field>
+            <field name="arch" type="xml">
+                <form string="Ubicación">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Ubicaciónes"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="responsable"/>
+                        </group>
+                        <group>
+                            <field name="area"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hospital_ubicaciones_tree_view" model="ir.ui.view">
+            <field name="name">hospital.ubicaciones.tree</field>
+            <field name="model">hospital.ubicaciones</field>
+            <field name="arch" type="xml">
+                <tree string="ubicaciones">
+                    <field name="name"/>
+                    <field name="area"/>
+                    <field name="responsable"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

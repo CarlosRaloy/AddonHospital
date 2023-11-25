@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="action_hospital_registros_menu" model="ir.actions.act_window">
-            <field name="name">Hospital</field>
+            <field name="name">Hospital 🏥</field>
             <field name="res_model">hospital.registros</field>
             <field name="view_mode">tree,kanban,form</field>
             <field name="domain">[]</field>
@@ -60,6 +60,18 @@
             </field>
         </record>
 
+        <record id="action_hospital_ubicacion_menu" model="ir.actions.act_window">
+            <field name="name">Ubicacion</field>
+            <field name="res_model">hospital.ubicaciones</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="o_view_overview_empty_folder">
+                    Crear nuevas ubicaciones
+                </p>
+            </field>
+        </record>
+
 
 
         <!-- === .::: Seccion de menus :::. === -->
@@ -103,6 +115,13 @@
                   sequence="5"
                   parent="menu_hospital"
                   action="action_hospital_especialidades_menu"
+                  groups="base.group_user"/>
+
+        <menuitem id="hospital_ubicaciones_menu"
+                  name="Ubicaciones"
+                  sequence="6"
+                  parent="menu_hospital"
+                  action="action_hospital_ubicacion_menu"
                   groups="base.group_user"/>
 
         <menuitem id="hospital_ajustes_menu"

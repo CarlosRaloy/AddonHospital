@@ -6,7 +6,7 @@ class HospitalConsultorio(models.Model):
     _description = 'Son los consultorios del hospital'
 
     name = fields.Char("Consultorio")
-    doctor = fields.Char("Doctor") # Modelo
-    especialidad = fields.Char("Especialidad") # Modelo
-    ubicacion = fields.Char("Ubicacion") # Modelo
+    doctor = fields.Many2one('hospital.doctores', 'Doctores')
+    especialidad = fields.Many2one('hospital.especialidades', 'Especialidades')
+    ubicacion = fields.Many2one('hospital.ubicaciones', 'Ubicaciones')
     horario = fields.Char("Horario")
