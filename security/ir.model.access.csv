@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 accesss_hospital_registros,hospital.registros,model_hospital_registros,,1,1,1,0
 accesss_hospital_consultorio,hospital.consultorio,model_hospital_consultorio,,1,1,1,0
 access_hospital_doctores,hospital.doctores,model_hospital_doctores,,1,1,1,0
+access_hospital_especialidades,hospital_especialidades,model_hospital_especialidades,,1,1,1,0
