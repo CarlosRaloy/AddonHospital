@@ -39,7 +39,7 @@ class HospitalRegistros(models.Model):
 
     def _get_to_date(self):
         date = self.date
-        return date.strftime('%d') + " de " + self.get_mes(date.strftime('%m')) + " de " + date.strftime('%Y')
+        return "HOLA"#date.strftime('%d') + " de " + self.get_mes(date.strftime('%m')) + " de " + date.strftime('%Y')
 
 
     def get_mes(self, n=1):

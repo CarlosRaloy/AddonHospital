@@ -2,20 +2,6 @@
 <odoo>
     <data>
 
-        <!--<template id="external_layout_hospital">
-            <t t-foreach="docs" t-as="doc">
-            </t>
-            <div class="header o_boxed_header">
-
-            </div>
-            <div class="article">
-                <t t-raw="0"/>
-            </div>
-            <div class="footer">
-
-            </div>
-        </template>-->
-
         <record id="paperformat_hospital_registros" model="report.paperformat">
             <field name="name">Hospital Letter</field>
             <field name="default" eval="True"/>
